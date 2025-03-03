@@ -205,6 +205,7 @@ plusBtn.addEventListener("click", () => {
   initial();
 });
 
+// delete form
 function deleteFun() {
   let deleteBtns = document.querySelectorAll(".trash-button");
 
@@ -222,4 +223,136 @@ function deleteFun() {
       );
     });
   });
+}
+
+//Descending
+let dec = document.querySelector(".sort-descending");
+dec.addEventListener("click", () => {
+  handleSorting("descending");
+});
+
+//Ascending
+let asc = document.querySelector(".sort-ascending");
+asc.addEventListener("click", () => {
+  handleSorting("ascending");
+});
+
+function handleSorting(direction) {
+  let graders = document.querySelectorAll("div.grader");
+  let objectArray = [];
+  graders.forEach((grade) => {
+    let className = grade.children[0].value;
+    let classNumber = grade.children[1].value;
+    let classCredit = grade.children[2].value;
+    let classGrade = grade.children[3].value;
+    if (
+      !(
+        className == "" &&
+        classNumber == "" &&
+        classCredit == "" &&
+        classGrade == ""
+      )
+    ) {
+      let classObject = { className, classNumber, classCredit, classGrade };
+      objectArray.push(classObject);
+    }
+  });
+  objectArray = mergeSort(objectArray);
+  if (direction == "descending") {
+    objectArray = objectArray.reverse();
+  }
+  console.log(objectArray);
+  let allInputs = document.quertSelector(".all-inputs");
+  allInputs.innerHTML = "";
+  for (let i = 0; i < allInputs.length; i++) {
+    console.log(objectArray[i]);
+    allInputs.innerHTML += `<form>
+          <div class="grader">
+            <input
+              type="text"
+              placeholder="class category"
+              class="class-type"
+              list="opt"
+              value=${objectArray[i].className}
+            >
+            <input
+              type="text"
+              placeholder="class number"
+              class="class-number"
+              value=${objectArray[i].classNumber}
+            >
+            <input
+              type="number"
+              placeholder="credits"
+              min="0"
+              max="6"
+              class="class-credits"
+              value=${objectArray[i].classCredit}
+            >
+            <select
+              name="select"
+              class="select"
+            >
+              <option value=""></option>
+              <option value=4.0>A</option>
+              <option value=3.7>A-</option>
+              <option value=3.4>B+</option>
+              <option value=3.0>B</option>
+              <option value=2.7>B-</option>
+              <option value=2.4>C+</option>
+              <option value=2.0>C</option>
+              <option value=1.7>C-</option>
+              <option value=1.4>D+</option>
+              <option value=1.0>D</option>
+              <option value=0.7>D-</option>
+              <option value=0.0>F</option>
+            </select>
+            <button class="trash-button">
+              <i class="fas fa-trash"></i>
+            </button>
+          </div>
+        </form>`;
+  }
+}
+
+function merge(a1, a2) {
+  let result = [];
+  let i = 0;
+  let j = 0;
+  console.log(a1, a2);
+
+  while (i < a1.length && a2.length) {
+    if (a1[i].classGrade > a2[j].classGrade) {
+      result.push(a2[j]);
+      j++;
+    } else {
+      result.push(a1[i]);
+      i++;
+    }
+  }
+
+  while (i < a1.length) {
+    result.push(a1[i]);
+    i++;
+  }
+  while (j < a2.length) {
+    result.push(a2[j]);
+    i++;
+  }
+
+  return result;
+}
+
+function mergeSort(arr) {
+  if (arr.length == 0) {
+    return;
+  }
+  if (arr.length == 1) {
+    return arr;
+  } else {
+    let middle = Math.floor(arr.length / 2);
+    let left = arr.slice(0, middle);
+    let right = arr.slice(middle, arr.length);
+    return merge(mergeSort(left), mergeSort(right));
+  }
 }

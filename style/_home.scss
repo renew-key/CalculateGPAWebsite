@@ -1,0 +1,161 @@
+body {
+  main {
+    section.main-part {
+      margin: 0.5rem 0rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      h1 {
+        color: white;
+        font-weight: bold;
+        font-size: 3rem;
+        margin: 0.5rem 0rem;
+      }
+      div.buttons {
+        button.btn {
+          margin: 1rem 0.5rem;
+          padding: 0.5rem 0.75rem;
+          border: none;
+          &:hover {
+            cursor: pointer;
+          }
+        }
+      }
+      div.all-inputs {
+        width: 100%;
+        form {
+          div.grader {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+
+            input,
+            select {
+              font-size: 1.05rem;
+              padding: 0.5rem;
+              border: 0.25px solid rgb(39, 39, 21);
+              margin: 0.35rem;
+              border-radius: 0.25rem;
+            }
+            input.class-credits {
+              width: 15%;
+            }
+            button {
+              border: none;
+              cursor: pointer;
+              background-color: $themeColor;
+              i {
+                font-size: 1.25rem;
+                pointer-events: none;
+                color: white;
+              }
+            }
+          }
+        }
+      }
+      button.plus-btn {
+        background-color: $themeColor;
+        border: none;
+        width: 2.5rem;
+        margin: 3rem 0rem;
+        cursor: pointer;
+        i {
+          font-size: 2.5rem;
+          color: white;
+        }
+      }
+      div.result {
+        width: 200px;
+        height: 200px;
+        border: 3px red solid;
+        border-radius: 50%;
+        text-align: center;
+        padding: 1rem;
+        margin-bottom: 1rem;
+        animation: borderColor 8s infinite;
+        p {
+          margin-top: 15px;
+          color: white;
+          font-size: 1.15rem;
+        }
+        h2#result-gpa {
+          font-size: 3.5rem;
+          font-weight: bold;
+          color: white;
+        }
+      }
+    }
+  }
+}
+
+@keyframes borderColor {
+  0% {
+    border-color: red;
+  }
+  33% {
+    border-color: lightgreen;
+  }
+  66% {
+    border-color: yellow;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  body {
+    main {
+      section.main-part {
+        margin: 0.5rem 0rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        h1 {
+          color: white;
+          font-weight: bold;
+          font-size: 2rem;
+          margin: 0.5rem 0rem;
+        }
+        div.all-inputs {
+          width: 100%;
+          form {
+            div.grader {
+              width: 100%;
+              display: flex;
+              justify-content: left;
+              // border: 1px red solid;
+              flex-wrap: wrap;
+              margin: 1rem 0rem;
+              padding-left: 1rem;
+              input,
+              select {
+                width: 45%;
+                font-size: 1.05rem;
+                padding: 0.5rem;
+                border: 0.25px solid rgb(39, 39, 21);
+                margin: 0.35rem;
+                border-radius: 0.25rem;
+              }
+              select.select {
+                width: 40%;
+              }
+              input.class-credits {
+                width: 40%;
+              }
+              button {
+                border: none;
+                cursor: pointer;
+                background-color: $themeColor;
+                i {
+                  font-size: 1.25rem;
+                  pointer-events: none;
+                  color: white;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

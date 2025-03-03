@@ -1,0 +1,37 @@
+body {
+  header {
+    background-color: black;
+    padding: 1rem;
+    box-shadow: 0 10px 6px -6px #777;
+    nav {
+      ul {
+        list-style-type: none;
+        display: flex;
+        flex-wrap: wrap;
+        li {
+          a {
+            text-decoration: none;
+            color: white;
+            margin: 0.5rem;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            &:hover {
+              color: yellow;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 700px) {
+  header {
+    nav {
+      ul {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+  }
+}

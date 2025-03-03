@@ -1,0 +1,216 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(69, 69, 69);
+  font-family: "Baloo 2", cursive;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: medium;
+  font-weight: normal;
+}
+
+body header {
+  background-color: black;
+  padding: 1rem;
+  box-shadow: 0 10px 6px -6px #777;
+}
+body header nav ul {
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+}
+body header nav ul li a {
+  text-decoration: none;
+  color: white;
+  margin: 0.5rem;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+}
+body header nav ul li a:hover {
+  color: yellow;
+}
+
+@media screen and (max-width: 700px) {
+  header nav ul {
+    display: flex;
+    flex-direction: column;
+  }
+}
+body main section.main-part {
+  margin: 0.5rem 0rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+body main section.main-part h1 {
+  color: white;
+  font-weight: bold;
+  font-size: 3rem;
+  margin: 0.5rem 0rem;
+}
+body main section.main-part div.buttons button.btn {
+  margin: 1rem 0.5rem;
+  padding: 0.5rem 0.75rem;
+  border: none;
+}
+body main section.main-part div.buttons button.btn:hover {
+  cursor: pointer;
+}
+body main section.main-part div.all-inputs {
+  width: 100%;
+}
+body main section.main-part div.all-inputs form div.grader {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+body main section.main-part div.all-inputs form div.grader input,
+body main section.main-part div.all-inputs form div.grader select {
+  font-size: 1.05rem;
+  padding: 0.5rem;
+  border: 0.25px solid rgb(39, 39, 21);
+  margin: 0.35rem;
+  border-radius: 0.25rem;
+}
+body main section.main-part div.all-inputs form div.grader input.class-credits {
+  width: 15%;
+}
+body main section.main-part div.all-inputs form div.grader button {
+  border: none;
+  cursor: pointer;
+  background-color: rgb(69, 69, 69);
+}
+body main section.main-part div.all-inputs form div.grader button i {
+  font-size: 1.25rem;
+  pointer-events: none;
+  color: white;
+}
+body main section.main-part button.plus-btn {
+  background-color: rgb(69, 69, 69);
+  border: none;
+  width: 2.5rem;
+  margin: 3rem 0rem;
+  cursor: pointer;
+}
+body main section.main-part button.plus-btn i {
+  font-size: 2.5rem;
+  color: white;
+}
+body main section.main-part div.result {
+  width: 200px;
+  height: 200px;
+  border: 3px red solid;
+  border-radius: 50%;
+  text-align: center;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  animation: borderColor 8s infinite;
+}
+body main section.main-part div.result p {
+  margin-top: 15px;
+  color: white;
+  font-size: 1.15rem;
+}
+body main section.main-part div.result h2#result-gpa {
+  font-size: 3.5rem;
+  font-weight: bold;
+  color: white;
+}
+
+@keyframes borderColor {
+  0% {
+    border-color: red;
+  }
+  33% {
+    border-color: lightgreen;
+  }
+  66% {
+    border-color: yellow;
+  }
+}
+@media screen and (max-width: 700px) {
+  body main section.main-part {
+    margin: 0.5rem 0rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  body main section.main-part h1 {
+    color: white;
+    font-weight: bold;
+    font-size: 2rem;
+    margin: 0.5rem 0rem;
+  }
+  body main section.main-part div.all-inputs {
+    width: 100%;
+  }
+  body main section.main-part div.all-inputs form div.grader {
+    width: 100%;
+    display: flex;
+    justify-content: left;
+    flex-wrap: wrap;
+    margin: 1rem 0rem;
+    padding-left: 1rem;
+  }
+  body main section.main-part div.all-inputs form div.grader input,
+  body main section.main-part div.all-inputs form div.grader select {
+    width: 45%;
+    font-size: 1.05rem;
+    padding: 0.5rem;
+    border: 0.25px solid rgb(39, 39, 21);
+    margin: 0.35rem;
+    border-radius: 0.25rem;
+  }
+  body main section.main-part div.all-inputs form div.grader select.select {
+    width: 40%;
+  }
+  body main section.main-part div.all-inputs form div.grader input.class-credits {
+    width: 40%;
+  }
+  body main section.main-part div.all-inputs form div.grader button {
+    border: none;
+    cursor: pointer;
+    background-color: rgb(69, 69, 69);
+  }
+  body main section.main-part div.all-inputs form div.grader button i {
+    font-size: 1.25rem;
+    pointer-events: none;
+    color: white;
+  }
+}
+body footer div.contain {
+  display: flex;
+  justify-content: center;
+  background-color: black;
+}
+body footer div.contain div.left,
+body footer div.contain div.right {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+}
+body footer div.contain div.left p.title,
+body footer div.contain div.right p.title {
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+}
+body footer div.contain div.left a,
+body footer div.contain div.right a {
+  text-decoration: none;
+  cursor: pointer;
+  color: white;
+  font-size: 1rem;
+  padding: 0.1rem 0rem;
+}/*# sourceMappingURL=style.css.map */

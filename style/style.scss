@@ -1,0 +1,26 @@
+$themeColor: rgb(69, 69, 69);
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: $themeColor;
+  font-family: "Baloo 2", cursive;
+
+  section.animation-wrapper {
+  }
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: medium;
+  font-weight: normal;
+}
+
+@import "./header";
+@import "./home";
+@import "./footer";

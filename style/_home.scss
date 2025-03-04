@@ -65,6 +65,13 @@ body {
                 font-size: 1.25rem;
                 pointer-events: none;
                 color: white;
+                &:hover {
+                  color: blue;
+                  transform: scale(1.2);
+                }
+                &:active {
+                  color: red;
+                }
               }
             }
           }

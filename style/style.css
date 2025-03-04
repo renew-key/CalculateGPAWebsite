@@ -143,6 +143,13 @@ body main section.main-part div.all-inputs form div.grader button i {
   pointer-events: none;
   color: white;
 }
+body main section.main-part div.all-inputs form div.grader button i:hover {
+  color: blue;
+  transform: scale(1.2);
+}
+body main section.main-part div.all-inputs form div.grader button i:active {
+  color: red;
+}
 body main section.main-part button.plus-btn {
   background-color: rgb(69, 69, 69);
   border: none;

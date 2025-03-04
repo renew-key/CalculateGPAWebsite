@@ -98,6 +98,10 @@ body main section.main-part div.buttons button.btn {
 }
 body main section.main-part div.buttons button.btn:hover {
   cursor: pointer;
+  transform: scale(1.2);
+  background-color: blue;
+  color: white;
+  font-weight: bold;
 }
 body main section.main-part div.all-inputs {
   width: 100%;

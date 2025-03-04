@@ -118,6 +118,11 @@ body main section.main-part div.all-inputs form div.grader select {
 body main section.main-part div.all-inputs form div.grader input.class-credits {
   width: 8%;
 }
+body main section.main-part div.all-inputs form div.grader .select {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
 body main section.main-part div.all-inputs form div.grader button {
   border: none;
   cursor: pointer;
@@ -194,7 +199,6 @@ body main section.main-part div.result h2#result-gpa {
 }
 @media screen and (max-width: 700px) {
   body main section.main-part {
-    margin: 0.5rem 0rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -214,7 +218,7 @@ body main section.main-part div.result h2#result-gpa {
     display: flex;
     justify-content: left;
     flex-wrap: wrap;
-    margin: 1rem 0rem;
+    margin: 0.5rem 0rem;
     padding-left: 1rem;
   }
   body main section.main-part div.all-inputs form div.grader input,
@@ -226,11 +230,14 @@ body main section.main-part div.result h2#result-gpa {
     margin: 0.35rem;
     border-radius: 0.25rem;
   }
-  body main section.main-part div.all-inputs form div.grader select.select {
-    width: 40%;
+  body main section.main-part div.all-inputs form div.grader .select {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
   }
   body main section.main-part div.all-inputs form div.grader input.class-credits {
     width: 40%;
+    height: 30%;
   }
   body main section.main-part div.all-inputs form div.grader button {
     border: none;

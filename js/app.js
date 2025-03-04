@@ -263,11 +263,14 @@ function handleSorting(direction) {
     objectArray = objectArray.reverse();
   }
   // console.log(objectArray);
-  let allInputs = document.querySelector(".all-inputs");
-  allInputs.innerHTML = "";
-  for (let i = 0; i < objectArray.length; i++) {
-    // console.log(objectArray[i]);
-    allInputs.innerHTML += `<form>
+
+  // console.log(objectArray.length);
+  if (objectArray.length > 0) {
+    let allInputs = document.querySelector(".all-inputs");
+    allInputs.innerHTML = "";
+    for (let i = 0; i < objectArray.length; i++) {
+      // console.log(objectArray[i]);
+      allInputs.innerHTML += `<form>
           <div class="grader">
             <input
               type="text"
@@ -313,12 +316,13 @@ function handleSorting(direction) {
             </button>
           </div>
         </form>`;
-  }
-  initial();
-  graders = document.querySelectorAll("div.grader");
-  for (let i = 0; i < graders.length; i++) {
-    graders[i].children[3].value = objectArray[i].classGrade;
-    changeColor(graders[i].children[3]);
+    }
+    initial();
+    graders = document.querySelectorAll("div.grader");
+    for (let i = 0; i < graders.length; i++) {
+      graders[i].children[3].value = objectArray[i].classGrade;
+      changeColor(graders[i].children[3]);
+    }
   }
 }
 

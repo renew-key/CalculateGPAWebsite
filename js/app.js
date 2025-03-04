@@ -83,6 +83,7 @@ function inputCredits() {
 }
 
 function changeColor(target) {
+  // console.log(target);
   switch (target.options[target.selectedIndex].text) {
     case "A":
     case "A-":
@@ -261,11 +262,11 @@ function handleSorting(direction) {
   if (direction == "descending") {
     objectArray = objectArray.reverse();
   }
-  console.log(objectArray);
-  let allInputs = document.quertSelector(".all-inputs");
+  // console.log(objectArray);
+  let allInputs = document.querySelector(".all-inputs");
   allInputs.innerHTML = "";
-  for (let i = 0; i < allInputs.length; i++) {
-    console.log(objectArray[i]);
+  for (let i = 0; i < objectArray.length; i++) {
+    // console.log(objectArray[i]);
     allInputs.innerHTML += `<form>
           <div class="grader">
             <input
@@ -313,15 +314,22 @@ function handleSorting(direction) {
           </div>
         </form>`;
   }
+  initial();
+  graders = document.querySelectorAll("div.grader");
+  for (let i = 0; i < graders.length; i++) {
+    graders[i].children[3].value = objectArray[i].classGrade;
+    changeColor(graders[i].children[3]);
+  }
 }
 
 function merge(a1, a2) {
   let result = [];
   let i = 0;
   let j = 0;
-  console.log(a1, a2);
 
-  while (i < a1.length && a2.length) {
+  while (i < a1.length && j < a2.length) {
+    // console.log(a1, a2);
+    // console.log(a1.length, a2.length);
     if (a1[i].classGrade > a2[j].classGrade) {
       result.push(a2[j]);
       j++;
@@ -332,12 +340,15 @@ function merge(a1, a2) {
   }
 
   while (i < a1.length) {
+    // console.log(a1);
     result.push(a1[i]);
     i++;
   }
+
   while (j < a2.length) {
+    // console.log(a2);
     result.push(a2[j]);
-    i++;
+    j++;
   }
 
   return result;
@@ -345,7 +356,7 @@ function merge(a1, a2) {
 
 function mergeSort(arr) {
   if (arr.length == 0) {
-    return;
+    return [];
   }
   if (arr.length == 1) {
     return arr;

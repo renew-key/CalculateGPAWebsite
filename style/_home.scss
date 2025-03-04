@@ -58,17 +58,13 @@ body {
               border: none;
               cursor: pointer;
               background-color: $themeColor;
+              &:hover {
+                transform: scale(1.2);
+              }
               i {
                 font-size: 1.25rem;
                 pointer-events: none;
                 color: white;
-                &:hover {
-                  color: blue;
-                  transform: scale(1.2);
-                }
-                &:active {
-                  color: red;
-                }
               }
             }
           }
@@ -80,16 +76,12 @@ body {
         width: 2.5rem;
         margin: 3rem 0rem;
         cursor: pointer;
+        &:hover {
+          transform: scale(1.2);
+        }
         i {
           font-size: 2.5rem;
           color: white;
-          &:hover {
-            color: blue;
-            transform: scale(1.2);
-          }
-          &:active {
-            color: red;
-          }
         }
       }
       div.result {

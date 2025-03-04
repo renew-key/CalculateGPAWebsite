@@ -103,6 +103,9 @@ body main section.main-part div.buttons button.btn:hover {
   color: white;
   font-weight: bold;
 }
+body main section.main-part div.buttons button.btn:active {
+  background-color: red;
+}
 body main section.main-part div.all-inputs {
   width: 100%;
 }
